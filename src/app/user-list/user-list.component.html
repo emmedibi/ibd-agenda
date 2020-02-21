@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Month</th>
+                    <th scope="col">#Tickets</th>
+                    <th scope="col">#DaysOfWork</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.month }}</td>
+                    <td>{{ user.ticket }}</td>
+                    <td>{{ user.dwork }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

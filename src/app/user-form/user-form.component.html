@@ -1,0 +1,25 @@
+<div class="card my-5">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input type="text" [(ngModel)]="user.month" class="form-control" id="month" name="month"
+                    placeholder="Enter month" required #month="ngModel">
+            </div>
+            <div [hidden]="!month.pristine" class="alert alert-danger">Month is required</div>
+            <div class="form-group">
+            <label for="ticket">Tickets</label>
+            <input type="number" [(ngModel)]="user.ticket" class="form-control" id="ticket" name="ticket"
+                    placeholder="Enter the number of tickets" required #ticket="ngModel">
+            </div>
+            <div [hidden]="!ticket.pristine" class="alert alert-danger">Number of tickets is required</div>
+            <div class="form-group">
+                <label for="dwork">Days of work</label>
+                <input type="number" [(ngModel)]="user.dwork" class="form-control" id="dwork" name="dwork"
+                    placeholder="Enter the number of days of work" required #dwork="ngModel">
+                <div [hidden]="!dwork.pristine" class="alert alert-danger">The number of days is required</div>
+            </div>
+            <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>
